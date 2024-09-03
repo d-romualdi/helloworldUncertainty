@@ -1,15 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package name="helloworldUncertainty" displayName="Hello World Uncertainty" description="Example demonstrating how to use iterations" version="2.0.0" url="https://apexrms.github.io/helloworldEnhanced/">
+<package name="helloworldUncertainty" displayName="Hello World Uncertainty (R)" description="Example demonstrating how to use iterations" version="2.0.0" url="https://apexrms.github.io/helloworldEnhanced/">
 
 	<!--Scenario Datasheets-->
 
 	<!--Run Control-->
-	<dataSheet name="RunControl" displayName="Run Control" isSingleRow="True">
-		<column name="MinimumIteration" displayName="Minimum Iteration" dataType="Integer" defaultValue="1" validationType="WholeNumber" validationCondition="GreaterEqual" formula1="1" isVisible="False"/>
-		<column name="MaximumIteration" displayName="Number of Iterations" dataType="Integer" defaultValue="5" validationType="WholeNumber" validationCondition="GreaterEqual" formula1="1"/>
-		<column name="MinimumTimestep" displayName="Minimum Timestep" dataType="Integer" defaultValue="0" validationType="WholeNumber" validationCondition="GreaterEqual" formula1="0"/>
-		<column name="MaximumTimestep" displayName="Maximum Timestep" dataType="Integer" defaultValue="10" validationType="WholeNumber" validationCondition="GreaterEqual" formula1="0"/>
-	</dataSheet>
+	<dataSheet name="RunControl" displayName="Run Control" isRunControl="True" timestepTitle="Timestep" showMinIteration="False"></dataSheet>
 
 	<!--Model Inputs-->
 	<dataSheet name="InputDatasheet" displayName="Inputs" isSingleRow="True">
@@ -19,9 +14,7 @@
 	</dataSheet>
 
 	<!--Model Output-->
-	<dataSheet name="OutputDatasheet" displayName="Outputs">
-		<column name="Iteration" dataType="Integer"/>
-		<column name="Timestep" dataType="Integer" displayName="Timestep"/>
+	<dataSheet name="OutputDatasheet" displayName="Outputs" hasIteration="True" hasTimestep="True">
 		<column name="y" dataType="Double" displayName="Value for y"/>
 	</dataSheet>
 
